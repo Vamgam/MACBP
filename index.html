@@ -2,23 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Course Materials</title>
+  <title>Mathematical & Computational Biophysics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
+    :root {
+      --primary: #1f3a5f;
+      --secondary: #3a6f7d;
+      --accent: #4caf93;
+      --background: #f9fbfc;
+      --text: #1a1a1a;
+      --light-gray: #e6ecf1;
     }
 
-    h1, h2, h3 {
-      color: #333;
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+      line-height: 1.65;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.4em;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--light-gray);
+      padding-bottom: 6px;
+      margin-top: 50px;
+    }
+
+    h3 {
+      color: var(--secondary);
+      margin-top: 30px;
+    }
+
+    p {
+      max-width: 850px;
     }
 
     a {
-      color: #0066cc;
+      color: var(--accent);
+      font-weight: 500;
       text-decoration: none;
     }
 
@@ -26,89 +57,129 @@
       text-decoration: underline;
     }
 
-    ul {
-      margin-left: 20px;
+    .subtitle {
+      color: #555;
+      font-size: 1.1em;
+      margin-bottom: 30px;
     }
 
     .toc {
-      background: #f5f5f5;
-      padding: 15px;
-      border-radius: 8px;
+      background: white;
+      border-left: 6px solid var(--primary);
+      padding: 20px 25px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      max-width: 850px;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin: 6px 0;
+    }
+
+    .toc li ul {
+      margin-left: 20px;
     }
 
     .section {
       margin-top: 40px;
     }
 
+    .materials {
+      background: white;
+      border-radius: 6px;
+      padding: 15px 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      max-width: 850px;
+    }
+
     footer {
-      margin-top: 60px;
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid var(--light-gray);
       font-size: 0.9em;
       color: #666;
-      text-align: center;
     }
   </style>
 </head>
+
 <body>
 
-<h1>Course Materials</h1>
-<p>This page contains lecture and seminar materials for the course.</p>
+<h1>Mathematical & Computational Biophysics</h1>
+<p class="subtitle">
+  Lecture and seminar materials on quantitative modeling of biological systems
+</p>
 
-<!-- Table of Contents -->
 <div class="toc">
-  <h2>Table of Contents</h2>
+  <h2>Contents</h2>
   <ul>
     <li><a href="#lectures">Lectures</a>
       <ul>
-        <li><a href="#lecture1">Lecture 1: Introduction</a></li>
-        <li><a href="#lecture2">Lecture 2: Core Concepts</a></li>
+        <li><a href="#lecture1">Lecture 1: Physical Principles of Biological Systems</a></li>
+        <li><a href="#lecture2">Lecture 2: Dynamical Systems in Biology</a></li>
       </ul>
     </li>
     <li><a href="#seminars">Seminars</a>
       <ul>
-        <li><a href="#seminar1">Seminar 1: Problem Solving</a></li>
-        <li><a href="#seminar2">Seminar 2: Case Studies</a></li>
+        <li><a href="#seminar1">Seminar 1: Modeling & Simulation</a></li>
+        <li><a href="#seminar2">Seminar 2: Data Analysis & Inference</a></li>
       </ul>
     </li>
   </ul>
 </div>
 
-<!-- Lectures -->
 <div class="section" id="lectures">
   <h2>Lectures</h2>
 
-  <h3 id="lecture1">Lecture 1: Introduction</h3>
-  <ul>
-    <li><a href="materials/lectures/lecture1.pdf">Slides (PDF)</a></li>
-    <li><a href="materials/lectures/lecture1-notes.pdf">Lecture Notes</a></li>
-    <li><a href="materials/lectures/lecture1-video.mp4">Video</a></li>
-  </ul>
+  <div class="materials">
+    <h3 id="lecture1">Lecture 1: Physical Principles of Biological Systems</h3>
+    <ul>
+      <li><a href="materials/lectures/lecture1-slides.pdf">Slides</a></li>
+      <li><a href="materials/lectures/lecture1-notes.pdf">Lecture Notes</a></li>
+      <li><a href="materials/lectures/lecture1-reading.pdf">Recommended Reading</a></li>
+    </ul>
+  </div>
 
-  <h3 id="lecture2">Lecture 2: Core Concepts</h3>
-  <ul>
-    <li><a href="materials/lectures/lecture2.pdf">Slides (PDF)</a></li>
-    <li><a href="materials/lectures/lecture2-notes.pdf">Lecture Notes</a></li>
-  </ul>
+  <div class="materials">
+    <h3 id="lecture2">Lecture 2: Dynamical Systems in Biology</h3>
+    <ul>
+      <li><a href="materials/lectures/lecture2-slides.pdf">Slides</a></li>
+      <li><a href="materials/lectures/lecture2-notes.pdf">Lecture Notes</a></li>
+      <li><a href="materials/lectures/lecture2-examples.pdf">Worked Examples</a></li>
+    </ul>
+  </div>
 </div>
 
-<!-- Seminars -->
 <div class="section" id="seminars">
   <h2>Seminars</h2>
 
-  <h3 id="seminar1">Seminar 1: Problem Solving</h3>
-  <ul>
-    <li><a href="materials/seminars/seminar1-tasks.pdf">Tasks</a></li>
-    <li><a href="materials/seminars/seminar1-solutions.pdf">Solutions</a></li>
-  </ul>
+  <div class="materials">
+    <h3 id="seminar1">Seminar 1: Modeling & Simulation</h3>
+    <ul>
+      <li><a href="materials/seminars/seminar1-tasks.pdf">Problem Set</a></li>
+      <li><a href="materials/seminars/seminar1-code.zip">Code Examples</a></li>
+    </ul>
+  </div>
 
-  <h3 id="seminar2">Seminar 2: Case Studies</h3>
-  <ul>
-    <li><a href="materials/seminars/seminar2-tasks.pdf">Tasks</a></li>
-    <li><a href="materials/seminars/seminar2-slides.pdf">Slides</a></li>
-  </ul>
+  <div class="materials">
+    <h3 id="seminar2">Seminar 2: Data Analysis & Inference</h3>
+    <ul>
+      <li><a href="materials/seminars/seminar2-tasks.pdf">Problem Set</a></li>
+      <li><a href="materials/seminars/seminar2-solutions.pdf">Solutions</a></li>
+    </ul>
+  </div>
 </div>
 
 <footer>
-  <p>© 2025 Your Name · Hosted on GitHub Pages</p>
+  <p>
+    © 2025 · Mathematical & Computational Biophysics  
+    <br>
+    Hosted on GitHub Pages
+  </p>
 </footer>
 
 </body>
