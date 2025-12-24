@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrated Course Portal</title>
+    <title>BioMath Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="sidebar">
+    <!-- 1. MOBILE TOPBAR (Visible on small screens) -->
+    <header class="mobile-topbar">
+        <div class="logo-area-small">
+            <!-- SMALL LOGO -->
+            <img src="images/logo.png" alt="Logo" class="logo-small">
+            <span>BioMath</span>
+        </div>
+        <button id="menu-toggle">☰</button>
+    </header>
+
+    <!-- 2. SIDEBAR (Visible on large screens) -->
+    <nav class="sidebar" id="sidebar">
         <div class="logo-area">
-            <div class="logo-circle">Bio</div>
+            <!-- LARGE CIRCLE LOGO -->
+            <div class="logo-circle">
+                <!-- If you have an image file, use <img>, otherwise text fallback -->
+                <!-- <img src="images/logo.png" style="width:100%; height:100%; border-radius:50%;"> -->
+                Bio
+            </div>
             <div class="logo-text">Computational Biology</div>
         </div>
+        
         <ul class="nav-menu">
-            <li class="nav-item active" data-target="dashboard"><span class="nav-icon">📊</span> Dashboard</li>
-            <li class="nav-item" data-target="materials"><span class="nav-icon">📚</span> Materials</li>
-            <li class="nav-item" data-target="schedule"><span class="nav-icon">📅</span> Schedule</li>
-            <li class="nav-item" data-target="homework"><span class="nav-icon">📝</span> Homework</li>
+            <li class="nav-item active" data-target="dashboard"><span class="nav-icon">📊</span> <span>Dashboard</span></li>
+            <li class="nav-item" data-target="materials"><span class="nav-icon">📚</span> <span>Materials</span></li>
+            <li class="nav-item" data-target="schedule"><span class="nav-icon">📅</span> <span>Schedule</span></li>
+            <li class="nav-item" data-target="homework"><span class="nav-icon">📝</span> <span>Homework</span></li>
         </ul>
     </nav>
 
+    <!-- 3. MAIN CONTENT -->
     <main class="content-wrapper">
+        <!-- (Keep all your existing sections: Dashboard, Materials, Schedule, Homework) -->
+        <!-- ... content ... -->
         
         <!-- DASHBOARD -->
         <section id="dashboard" class="page-section active-section">
@@ -31,17 +51,17 @@
                     <h3>🚀 Next Up</h3>
                     <div id="next-event-display"></div>
                 </div>
-               
+                <div class="panel">
+                    <h3>🏆 Leaderboard</h3>
+                    <table class="simple-table"><tbody id="leaderboard-body"></tbody></table>
+                </div>
             </div>
         </section>
 
         <!-- MATERIALS -->
         <section id="materials" class="page-section">
             <h1>Course Materials</h1>
-            <p class="subtitle">Generated automatically from the course schedule.</p>
-            <div class="materials-grid" id="materials-grid-container">
-                <!-- Javascript puts cards here -->
-            </div>
+            <div class="materials-grid" id="materials-grid-container"></div>
         </section>
 
         <!-- SCHEDULE -->
@@ -50,35 +70,22 @@
             <div class="panel">
                 <table class="full-table">
                     <thead><tr><th>Week</th><th>Date</th><th>Type</th><th>Topic</th></tr></thead>
-                    <tbody id="full-schedule-body">
-                        <!-- Javascript puts rows here -->
-                    </tbody>
+                    <tbody id="full-schedule-body"></tbody>
                 </table>
             </div>
         </section>
 
-        <!-- HOMEWORK (New) -->
+        <!-- HOMEWORK -->
         <section id="homework" class="page-section">
-            <h1>Active Assignments</h1>
+            <h1>Homework</h1>
             <div class="dashboard-grid">
-                
-                <!-- List of Active Tasks -->
                 <div class="panel">
-                    <h3>Your Task List</h3>
-                    <div id="homework-list-container">
-                        <!-- Javascript puts tasks here -->
-                    </div>
+                    <h3>Tasks</h3>
+                    <div id="homework-list-container"></div>
                 </div>
-
-                <!-- Submission Form -->
                 <div class="panel">
-                    <h3>Submit Work</h3>
-                    <form action="#" method="POST">
-                        <input type="text" placeholder="Your Name" class="input-field">
-                        <input type="text" placeholder="Task ID (e.g., S2)" class="input-field">
-                        <div class="dropzone">Drop file here</div>
-                        <button class="btn-main">Upload</button>
-                    </form>
+                    <h3>Submit</h3>
+                    <form><div class="dropzone">Drop file</div><button class="btn-main">Upload</button></form>
                 </div>
             </div>
         </section>
@@ -86,5 +93,14 @@
     </main>
 
     <script src="script.js"></script>
+    
+    <!-- Optional: Simple script to toggle mobile menu -->
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        toggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

@@ -202,3 +202,83 @@ h1 { color: var(--primary); margin-bottom: 0.5rem; }
     margin-bottom: 1rem;
     line-height: 1.5;
 }
+/* --- NEW: MOBILE TOPBAR --- */
+.mobile-topbar {
+    display: none; /* Hidden on desktop */
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
+    height: 60px;
+}
+
+.logo-area-small {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.logo-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--accent);
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- SIDEBAR LOGO (LARGE) --- */
+/* (This replaces the old .logo-circle style) */
+.logo-circle {
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 800;
+    border: 4px solid var(--accent);
+    overflow: hidden; /* Ensures image stays inside circle */
+    background-image: url('images/logo.png'); /* <--- PUT YOUR LOGO HERE TOO */
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    /* Show Topbar on Mobile */
+    .mobile-topbar { display: flex; }
+    
+    /* Hide Sidebar by default on Mobile */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: fixed;
+        top: 60px; bottom: 0;
+        width: 250px;
+    }
+    
+    /* Show Sidebar when toggled */
+    .sidebar.open { transform: translateX(0); }
+    
+    /* Adjust Content padding so it doesn't hide behind topbar */
+    .content-wrapper { margin-top: 60px; padding: 1.5rem; }
+    
+    /* Hide the large logo in sidebar on mobile (optional, saves space) */
+    .sidebar .logo-area { display: none; }
+}
