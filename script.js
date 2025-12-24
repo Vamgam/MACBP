@@ -10,7 +10,12 @@ const courseContent = [
     type: "Lecture",
     title: "ОДУ как язык биофизики",
     desc: "Детерминированные динамические системы, фазовое пространство, стационарные точки.",
-    icon: "📈",
+    
+    image: "images/materials/lecture-1.png", 
+        
+        
+    isVisible: true, 
+
     materialLink: "files/lecture1_ode_intro.pdf",
     homework: null
 },
@@ -350,36 +355,24 @@ const courseContent = [
 
 ];
 
-const studentData = [
-    { name: "HelixHunter", xp: 1250, badge: "🧬" },
-    { name: "DockingMaster", xp: 1100, badge: "💊" },
-    { name: "GromacsGuru", xp: 950, badge: "⚡" },
-];
+
 
 /* =========================================
    RENDER LOGIC
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
     setupNavigation();
-    
-    // 1. Render Schedule (Uses ALL items)
     renderSchedule();
-
-    // 2. Render Materials (Filters for items with materialLink)
-    renderMaterials();
-
-    // 3. Render Homework (Filters for items with homework)
+    renderMaterials(); // Renders images based on isVisible flag
     renderHomework();
-
-    // 4. Render Dashboard Widgets
     renderNextEvent();
     renderLeaderboard();
 });
 
+// [Navigation function remains the same as before]
 function setupNavigation() {
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('.page-section');
-
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             navItems.forEach(nav => nav.classList.remove('active'));
@@ -391,6 +384,36 @@ function setupNavigation() {
     });
 }
 
+// 1. Render Materials (Images + Visibility Check)
+function renderMaterials() {
+    const container = document.getElementById('materials-grid-container');
+    
+    // Filter: Only show items where isVisible is TRUE
+    const visibleMaterials = courseContent.filter(item => item.isVisible);
+
+    if (visibleMaterials.length === 0) {
+        container.innerHTML = "<p>No materials available yet.</p>";
+        return;
+    }
+
+    container.innerHTML = visibleMaterials.map(item => `
+        <div class="material-card">
+            <!-- IMAGE RENDERER -->
+            <div class="card-img" style="background-image: url('${item.image}');">
+                <!-- Fallback text if image fails to load or is purely decorative -->
+                <span class="img-overlay">${item.type}</span>
+            </div>
+            
+            <div class="card-body">
+                <h4>${item.title}</h4>
+                <p>${item.desc}</p>
+                <a href="${item.materialLink}" class="btn-small" target="_blank">Download Files</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+// 2. Render Schedule (Shows ALL items regardless of visibility)
 function renderSchedule() {
     const tbody = document.getElementById('full-schedule-body');
     tbody.innerHTML = courseContent.map(item => `
@@ -402,67 +425,34 @@ function renderSchedule() {
                     ${item.type}
                 </span>
             </td>
-            <td><strong>${item.title}</strong></td>
+            <td>
+                <strong>${item.title}</strong>
+                ${!item.isVisible ? '<span style="font-size:0.8em; color:#999; margin-left:5px;">(Coming Soon)</span>' : ''}
+            </td>
         </tr>
     `).join('');
 }
 
-function renderMaterials() {
-    const container = document.getElementById('materials-grid-container');
-    // Filter: Only show items that actually have a file link
-    const materials = courseContent.filter(item => item.materialLink);
-    
-    container.innerHTML = materials.map(item => `
-        <div class="material-card">
-            <div class="card-img">
-                <span style="font-size: 3rem;">${item.icon}</span>
-            </div>
-            <div class="card-body">
-                <span style="font-size:0.75rem; font-weight:bold; color:#b2bec3;">${item.type.toUpperCase()}</span>
-                <h4>${item.title}</h4>
-                <p>${item.desc}</p>
-                <a href="${item.materialLink}" class="btn-small">Download Materials</a>
-            </div>
-        </div>
-    `).join('');
-}
-
+// [Homework, Leaderboard, and NextEvent functions remain same as before]
 function renderHomework() {
     const container = document.getElementById('homework-list-container');
-    // Filter: Only show items that have a homework assignment
     const tasks = courseContent.filter(item => item.homework);
-
     container.innerHTML = tasks.map(item => `
         <div class="task-row">
             <div class="task-info">
                 <strong>Week ${item.week}: ${item.title}</strong>
                 <p>${item.homework}</p>
             </div>
-            <div class="task-action">
-                <span style="font-size:0.8rem; color:#e74c3c;">Due: ${item.date}</span>
-            </div>
+            <div class="task-action"><span style="font-size:0.8rem; color:#e74c3c;">Due: ${item.date}</span></div>
         </div>
     `).join('');
 }
-
 function renderNextEvent() {
     const container = document.getElementById('next-event-display');
-    // Simple logic: Find first item where date is "future" (omitted for brevity, taking index 2)
-    const event = courseContent[2]; 
-    container.innerHTML = `
-        <h3>${event.title}</h3>
-        <p>📅 ${event.date}</p>
-        <p>${event.desc}</p>
-    `;
+    const event = courseContent.find(i => i.isVisible) || courseContent[0]; 
+    container.innerHTML = `<h3>${event.title}</h3><p>📅 ${event.date}</p><p>${event.desc}</p>`;
 }
-
 function renderLeaderboard() {
     const tbody = document.getElementById('leaderboard-body');
-    tbody.innerHTML = studentData.map((s, i) => `
-        <tr>
-            <td>#${i+1}</td>
-            <td>${s.badge} ${s.name}</td>
-            <td style="text-align:right"><strong>${s.xp} XP</strong></td>
-        </tr>
-    `).join('');
+    tbody.innerHTML = studentData.map((s, i) => `<tr><td>#${i+1}</td><td>${s.badge} ${s.name}</td><td style="text-align:right"><strong>${s.xp} XP</strong></td></tr>`).join('');
 }

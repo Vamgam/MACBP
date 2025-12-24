@@ -143,3 +143,62 @@ h1 { color: var(--primary); margin-bottom: 0.5rem; }
 .task-row:last-child { border-bottom: none; }
 .task-info p { margin: 0.2rem 0 0 0; color: #666; font-size: 0.9rem; }
 .input-field { width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px; }
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.material-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* This class handles the actual image rendering */
+.card-img {
+    height: 160px;
+    background-color: #dfe6e9; /* Fallback color */
+    background-size: cover;    /* Ensures image covers the whole area */
+    background-position: center;
+    position: relative;
+}
+
+/* Optional: Adds a dark tint so white text is readable if you add text over image */
+.img-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-body {
+    padding: 1.2rem;
+}
+
+.card-body h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
