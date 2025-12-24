@@ -3,318 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math & Comp Bio | Course Materials</title>
-    <style>
-        /* --- CSS VARIABLES & RESET --- */
-        :root {
-            --primary-color: #2c3e50;   /* Academic Dark Blue */
-            --accent-color: #3498db;    /* Science Blue */
-            --text-color: #333;
-            --bg-color: #f4f7f6;
-            --white: #ffffff;
-            --sidebar-width: 250px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* --- SIDEBAR (Table of Contents) --- */
-        .sidebar {
-            width: var(--sidebar-width);
-            background-color: var(--primary-color);
-            color: var(--white);
-            position: fixed;
-            height: 100vh;
-            padding: 2rem 1rem;
-            overflow-y: auto;
-        }
-
-        .logo-container {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .logo-placeholder {
-            width: 120px;
-            height: 120px;
-            background-color: var(--white);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-weight: bold;
-            border: 4px solid var(--accent-color);
-            /* REPALCE THIS WITH YOUR IMAGE: background-image: url('images/logo.png'); */
-        }
-
-        .nav-links {
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-links a {
-            color: #ecf0f1;
-            text-decoration: none;
-            display: block;
-            padding: 0.75rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: var(--accent-color);
-        }
-
-        /* --- MAIN CONTENT --- */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            flex: 1;
-            padding: 2rem 4rem;
-        }
-
-        header {
-            margin-bottom: 3rem;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 1rem;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 1rem;
-        }
-
-        /* --- MATERIAL CARDS --- */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-image {
-            height: 180px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            /* REPLACE WITH: background-image: url('images/lecture1.jpg'); background-size: cover; */
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
-        /* --- TABLE STYLES --- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 2rem;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; position: relative; }
-            .main-content { margin-left: 0; padding: 1.5rem; }
-        }
-    </style>
+    <title>Integrated Course Portal</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- SIDEBAR NAVIGATION -->
     <nav class="sidebar">
-        <div class="logo-container">
-            <!-- LOGO PLACEHOLDER -->
-            <div class="logo-placeholder">
-                LOGO
-            </div>
-            <h3>BioMath 2025</h3>
+        <div class="logo-area">
+            <div class="logo-circle">Bio</div>
+            <div class="logo-text">Computational Biology</div>
         </div>
-        <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="index.html#lectures">Materials</a></li>
-    <!-- This line links to the new file -->
-    <li><a href="schedule.html">Lecture Plan</a></li> 
-    <li><a href="https://github.com/yourusername/repo" target="_blank">GitHub Repo</a></li>
-</ul>
-
+        <ul class="nav-menu">
+            <li class="nav-item active" data-target="dashboard"><span class="nav-icon">📊</span> Dashboard</li>
+            <li class="nav-item" data-target="materials"><span class="nav-icon">📚</span> Materials</li>
+            <li class="nav-item" data-target="schedule"><span class="nav-icon">📅</span> Schedule</li>
+            <li class="nav-item" data-target="homework"><span class="nav-icon">📝</span> Homework</li>
+        </ul>
     </nav>
 
-    <!-- MAIN PAGE CONTENT -->
-    <main class="main-content">
+    <main class="content-wrapper">
         
-        <header id="home">
-            <h1>Mathematical & Computational Biology</h1>
-            <p><strong>Instructor:</strong> [Your Name] | <strong>Term:</strong> Spring 2025</p>
-            <p>Welcome to the course repository. Here you will find lecture notes, seminar code snippets (Python/GROMACS), and datasets.</p>
-        </header>
-
-        <!-- LECTURES SECTION -->
-        <section id="lectures">
-            <h2>Lecture Materials</h2>
-            <div class="grid-container">
-                
-                <!-- Lecture 1 -->
-                <article class="card">
-                    <div class="card-image">
-                        <!-- Put 'docking.jpg' in your images folder -->
-                        <span>Img: Molecular Docking</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">L1: Molecular Docking</h3>
-                        <p>Introduction to AutoDock Vina, scoring functions, and algorithms (Genetic, Monte Carlo).</p>
-                        <a href="files/lecture1_docking.pdf" class="btn" download>Download Slides (PDF)</a>
-                    </div>
-                </article>
-
-                <!-- Lecture 2 -->
-                <article class="card">
-                    <div class="card-image">
-                        <span>Img: DNA Computing</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">L2: DNA Computing</h3>
-                        <p>Oligonucleotide logic gates, thermodynamic models, and the NUPACK suite.</p>
-                        <a href="files/lecture2_dna.pdf" class="btn" download>Download Slides (PDF)</a>
-                    </div>
-                </article>
-
-                <!-- Lecture 3 -->
-                <article class="card">
-                    <div class="card-image">
-                        <span>Img: MD Simulations</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">L3: Molecular Dynamics</h3>
-                        <p>Force fields (CHARMM36), periodic boundary conditions, and enzyme stability.</p>
-                        <a href="files/lecture3_md.pdf" class="btn" download>Download Slides (PDF)</a>
-                    </div>
-                </article>
-
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page-section active-section">
+            <h1>Dashboard</h1>
+            <div class="dashboard-grid">
+                <div class="panel highlight-panel">
+                    <h3>🚀 Next Up</h3>
+                    <div id="next-event-display"></div>
+                </div>
+                <div class="panel">
+                    <h3>🏆 Leaderboard</h3>
+                    <table class="simple-table"><tbody id="leaderboard-body"></tbody></table>
+                </div>
             </div>
         </section>
 
-        <!-- SEMINARS SECTION -->
-        <section id="seminars">
-            <h2>Seminars & Workshops</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Week</th>
-                        <th>Topic</th>
-                        <th>Required Software</th>
-                        <th>Materials</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Linux & Bash for Biologists</td>
-                        <td>Ubuntu / WSL</td>
-                        <td><a href="#">Script_Basics.sh</a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Python: Parsing PDB Files</td>
-                        <td>Python 3.9, NumPy</td>
-                        <td><a href="#">notebook_parser.ipynb</a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Running GROMACS on Cluster</td>
-                        <td>GROMACS 2024</td>
-                        <td><a href="#">mdp_files.zip</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- MATERIALS -->
+        <section id="materials" class="page-section">
+            <h1>Course Materials</h1>
+            <p class="subtitle">Generated automatically from the course schedule.</p>
+            <div class="materials-grid" id="materials-grid-container">
+                <!-- Javascript puts cards here -->
+            </div>
         </section>
 
-        <!-- RESOURCES SECTION -->
-        <section id="resources">
-            <h2>Useful Links</h2>
-            <ul>
-                <li><a href="https://www.gromacs.org/Documentation">GROMACS Documentation</a></li>
-                <li><a href="http://www.nupack.org/">NUPACK: Nucleic Acid Package</a></li>
-                <li><a href="https://vina.scripps.edu/">AutoDock Vina Manual</a></li>
-            </ul>
+        <!-- SCHEDULE -->
+        <section id="schedule" class="page-section">
+            <h1>Full Schedule</h1>
+            <div class="panel">
+                <table class="full-table">
+                    <thead><tr><th>Week</th><th>Date</th><th>Type</th><th>Topic</th></tr></thead>
+                    <tbody id="full-schedule-body">
+                        <!-- Javascript puts rows here -->
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <footer>
-            <p>&copy; 2025 [Your Name]. Hosted on GitHub Pages.</p>
-        </footer>
+        <!-- HOMEWORK (New) -->
+        <section id="homework" class="page-section">
+            <h1>Active Assignments</h1>
+            <div class="dashboard-grid">
+                
+                <!-- List of Active Tasks -->
+                <div class="panel">
+                    <h3>Your Task List</h3>
+                    <div id="homework-list-container">
+                        <!-- Javascript puts tasks here -->
+                    </div>
+                </div>
+
+                <!-- Submission Form -->
+                <div class="panel">
+                    <h3>Submit Work</h3>
+                    <form action="#" method="POST">
+                        <input type="text" placeholder="Your Name" class="input-field">
+                        <input type="text" placeholder="Task ID (e.g., S2)" class="input-field">
+                        <div class="dropzone">Drop file here</div>
+                        <button class="btn-main">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
