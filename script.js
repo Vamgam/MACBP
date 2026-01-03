@@ -16,17 +16,7 @@ const courseContent = [
     materialLink: "files/lecture1_ode_basics.pdf",
     homework: null
 },
-{
-    id: "S1",
-    week: 1,
-    date: "2026-02-12",
-    type: "Seminar",
-    title: "Биохимическая кинетика",
-    desc: "Модели масс-действия, линейная устойчивость, якобиан.",
-    icon: "🧪",
-    materialLink: "files/seminar1_kinetics.pdf",
-    homework: "Записать и проанализировать систему ОДУ для простой реакции"
-},
+
 
 {
     id: "L2",
@@ -39,89 +29,22 @@ const courseContent = [
     materialLink: "files/lecture2_nonlinear_networks.pdf",
     homework: null
 },
-{
-    id: "S2",
-    week: 2,
-    date: "2026-02-19",
-    type: "Seminar",
-    title: "Нейронные и генные сети",
-    desc: "Фазовые портреты, спектр якобиана, устойчивость.",
-    icon: "🧠",
-    materialLink: "files/seminar2_networks.pdf",
-    homework: "Исследовать устойчивость простой сетевой модели"
-},
+
 
 {
     id: "L3",
     week: 3,
     date: "2026-02-24",
     type: "Lecture",
-    title: "Диффузия и транспорт",
+    title: "ЧДУ:Диффузия и транспорт",
     desc: "Уравнение диффузии, оператор Лапласа, краевые условия.",
     icon: "🌊",
     materialLink: "files/lecture3_diffusion.pdf",
     homework: null
 },
-{
-    id: "S3",
-    week: 3,
-    date: "2026-02-26",
-    type: "Seminar",
-    title: "Решения уравнения диффузии",
-    desc: "Аналитические решения и физический смысл.",
-    icon: "📐",
-    materialLink: "files/seminar3_diffusion.pdf",
-    homework: "Решить уравнение диффузии в 1D"
-},
 
 {
     id: "L4",
-    week: 4,
-    date: "2026-03-03",
-    type: "Lecture",
-    title: "Реакционно-диффузионные системы",
-    desc: "Связь реакции и диффузии, условия неустойчивости.",
-    icon: "🎨",
-    materialLink: "files/lecture4_reaction_diffusion.pdf",
-    homework: null
-},
-{
-    id: "S4",
-    week: 4,
-    date: "2026-03-05",
-    type: "Seminar",
-    title: "Морфогенез и паттерны",
-    desc: "Спектр Лапласиана и пространственные моды.",
-    icon: "🦓",
-    materialLink: "files/seminar4_turing.pdf",
-    homework: "Вывести условия возникновения паттерна Тьюринга"
-},
-
-{
-    id: "L5",
-    week: 5,
-    date: "2026-03-10",
-    type: "Lecture",
-    title: "Пространственные нейронные модели",
-    desc: "Кабельное уравнение, геометрия нейрона.",
-    icon: "⚡",
-    materialLink: "files/lecture5_cable.pdf",
-    homework: null
-},
-{
-    id: "S5",
-    week: 5,
-    date: "2026-03-12",
-    type: "Seminar",
-    title: "Дендриты и аксоны",
-    desc: "Влияние геометрии на распространение сигнала.",
-    icon: "🧬",
-    materialLink: "files/seminar5_neuron_geometry.pdf",
-    homework: "Оценить затухание сигнала вдоль дендрита"
-},
-
-{
-    id: "L6",
     week: 6,
     date: "2026-03-17",
     type: "Lecture",
@@ -132,19 +55,7 @@ const courseContent = [
     homework: null
 },
 {
-    id: "S6",
-    week: 6,
-    date: "2026-03-19",
-    type: "Seminar",
-    title: "Шум в клетке",
-    desc: "Сравнение детерминированных и стохастических моделей.",
-    icon: "📊",
-    materialLink: "files/seminar6_noise.pdf",
-    homework: "Сравнить детерминированную и стохастическую модель"
-},
-
-{
-    id: "L7",
+    id: "L5",
     week: 7,
     date: "2026-03-24",
     type: "Lecture",
@@ -154,20 +65,43 @@ const courseContent = [
     materialLink: "files/lecture7_gillespie.pdf",
     homework: null
 },
+
 {
-    id: "S7",
-    week: 7,
-    date: "2026-03-26",
-    type: "Seminar",
-    title: "Стохастическая экспрессия генов",
-    desc: "Флуктуации при малом числе молекул.",
-    icon: "🧫",
-    materialLink: "files/seminar7_gene_noise.pdf",
-    homework: "Смоделировать экспрессию гена методом Гиллеспи"
+    id: "L6",
+    week: 11,
+    date: "2026-04-21",
+    type: "Lecture",
+    title: "Геометрия биологических структур",
+    desc: "Кривизна, минимальные поверхности, мембраны.",
+    icon: "📐",
+    materialLink: "files/lecture11_geometry.pdf",
+    homework: null
 },
 
 {
+    id: "L7",
+    week: 12,
+    date: "2026-04-28",
+    type: "Lecture",
+    title: "Механика биологических сред и структур",
+    desc: "Упругость, вязкость, активные среды.",
+    icon: "🏗️",
+    materialLink: "files/lecture12_mechanics.pdf",
+    homework: null
+},
+{
     id: "L8",
+    week: 12,
+    date: "2026-04-28",
+    type: "Lecture",
+    title: "Модели полимеров в биофизике",
+    desc: "Упругость, вязкость, активные среды.",
+    icon: "🏗️",
+    materialLink: "files/lecture12_mechanics.pdf",
+    homework: null
+},
+{
+    id: "L9",
     week: 8,
     date: "2026-03-31",
     type: "Lecture",
@@ -178,111 +112,29 @@ const courseContent = [
     homework: null
 },
 {
-    id: "S8",
-    week: 8,
-    date: "2026-04-02",
-    type: "Seminar",
-    title: "Связывание и кооперативность",
-    desc: "Вероятности состояний и биофизический смысл.",
-    icon: "🧲",
-    materialLink: "files/seminar8_binding.pdf",
-    homework: "Вычислить распределение состояний системы"
-},
-
-{
-    id: "L9",
-    week: 9,
-    date: "2026-04-07",
-    type: "Lecture",
-    title: "Энтропия и информация",
-    desc: "Информация как следствие статистической физики.",
-    icon: "📡",
-    materialLink: "files/lecture9_information.pdf",
-    homework: null
-},
-{
-    id: "S9",
-    week: 9,
-    date: "2026-04-09",
-    type: "Seminar",
-    title: "Информационные меры в биофизике",
-    desc: "Энтропия сигналов и нейронное кодирование.",
-    icon: "🧠",
-    materialLink: "files/seminar9_information.pdf",
-    homework: "Оценить энтропию простого сигнала"
-},
-
-{
     id: "L10",
-    week: 10,
-    date: "2026-04-14",
+    week: 8,
+    date: "2026-03-31",
     type: "Lecture",
     title: "Неравновесная статистическая физика",
-    desc: "Потоки, производство энтропии.",
-    icon: "♻️",
-    materialLink: "files/lecture10_noneq.pdf",
+    desc: "Ансамбли, свободная энергия, распределение Больцмана.",
+    icon: "🔥",
+    materialLink: "files/lecture8_statphys_eq.pdf",
     homework: null
 },
-{
-    id: "S10",
-    week: 10,
-    date: "2026-04-16",
-    type: "Seminar",
-    title: "Молекулярные моторы",
-    desc: "Физический смысл неравновесности.",
-    icon: "⚙️",
-    materialLink: "files/seminar10_motors.pdf",
-    homework: "Разобрать простой неравновесный цикл"
-},
-
 {
     id: "L11",
-    week: 11,
-    date: "2026-04-21",
+    week: 8,
+    date: "2026-03-31",
     type: "Lecture",
-    title: "Геометрия биологических структур",
-    desc: "Кривизна, минимальные поверхности, мембраны.",
-    icon: "📐",
-    materialLink: "files/lecture11_geometry.pdf",
+    title: "Энергетические ландашафты биомолекул",
+    desc: "Ансамбли, свободная энергия, распределение Больцмана.",
+    icon: "🔥",
+    materialLink: "files/lecture8_statphys_eq.pdf",
     homework: null
 },
-{
-    id: "S11",
-    week: 11,
-    date: "2026-04-23",
-    type: "Seminar",
-    title: "Геометрия мембран",
-    desc: "Модель Хельфриха и энергетический функционал.",
-    icon: "🫧",
-    materialLink: "files/seminar11_membranes.pdf",
-    homework: "Проанализировать энергию мембраны заданной формы"
-},
-
 {
     id: "L12",
-    week: 12,
-    date: "2026-04-28",
-    type: "Lecture",
-    title: "Механика биологических сред",
-    desc: "Упругость, вязкость, активные среды.",
-    icon: "🏗️",
-    materialLink: "files/lecture12_mechanics.pdf",
-    homework: null
-},
-{
-    id: "S12",
-    week: 12,
-    date: "2026-04-30",
-    type: "Seminar",
-    title: "Цитоскелет и ткани",
-    desc: "Связь механики и функции.",
-    icon: "🧵",
-    materialLink: "files/seminar12_cytoskeleton.pdf",
-    homework: "Оценить механический отклик простой модели"
-},
-
-{
-    id: "L13",
     week: 13,
     date: "2026-05-05",
     type: "Lecture",
@@ -292,43 +144,9 @@ const courseContent = [
     materialLink: "files/lecture13_quantum.pdf",
     homework: null
 },
-{
-    id: "S13",
-    week: 13,
-    date: "2026-05-07",
-    type: "Seminar",
-    title: "Квантовые уровни молекул",
-    desc: "Энергетические уровни и переходы.",
-    icon: "🌈",
-    materialLink: "files/seminar13_levels.pdf",
-    homework: "Рассчитать уровни энергии простой модели"
-},
 
 {
-    id: "L14",
-    week: 14,
-    date: "2026-05-12",
-    type: "Lecture",
-    title: "Квантовая статистика",
-    desc: "Квантовые ансамбли и распределения.",
-    icon: "📊",
-    materialLink: "files/lecture14_quantum_stat.pdf",
-    homework: null
-},
-{
-    id: "S14",
-    week: 14,
-    date: "2026-05-14",
-    type: "Seminar",
-    title: "Фотопроцессы в биологии",
-    desc: "Поглощение и релаксация.",
-    icon: "🌞",
-    materialLink: "files/seminar14_photobio.pdf",
-    homework: "Разобрать фотопереход в простой системе"
-},
-
-{
-    id: "L15",
+    id: "L13",
     week: 15,
     date: "2026-05-19",
     type: "Lecture",
@@ -338,19 +156,6 @@ const courseContent = [
     materialLink: "files/lecture15_quantum_bio.pdf",
     homework: null
 },
-{
-    id: "S15",
-    week: 15,
-    date: "2026-05-21",
-    type: "Seminar",
-    title: "Синтез курса и границы моделей",
-    desc: "Интеграция всех подходов.",
-    icon: "🧠",
-    materialLink: "files/seminar15_summary.pdf",
-    homework: "Подготовить обзор одной модели курса"
-}
-
-
 ];
 
 
@@ -454,3 +259,44 @@ function renderLeaderboard() {
     const tbody = document.getElementById('leaderboard-body');
     tbody.innerHTML = studentData.map((s, i) => `<tr><td>#${i+1}</td><td>${s.badge} ${s.name}</td><td style="text-align:right"><strong>${s.xp} XP</strong></td></tr>`).join('');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing code (setupNavigation, renderSchedule и т.д.) ...
+    
+    // Mobile menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    
+    // Toggle sidebar
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Предотвращаем всплытие
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+    });
+    
+    // Close sidebar when clicking on overlay
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+    });
+    
+    // Close sidebar when clicking on nav items (on mobile)
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+        });
+    });
+    
+    // Close sidebar when window is resized to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+    });
+});
